@@ -6,6 +6,4 @@ export interface Vacuna{
     descripcion: string,
     tecnologia: string,
     fecha: Date
-    fiable: boolean
-    personas: Persona['_id']
 }

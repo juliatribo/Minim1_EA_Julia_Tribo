@@ -1,0 +1,59 @@
+<div class="row" *ngIf="!persona; else main_content">
+    <h1>Loading...</h1>
+</div>
+<ng-template #main_content>
+<div class="row p-4">
+    <form (submit)="updatedPersona(namePersona)" id="form2">
+        <div class="card">
+            <div class="card-header">
+                PERSONA
+            </div>
+            <div class="form-group  p-4">
+                <input type="text" class="form-control" placeholder="Name" [value]="persona.name" required #namePersona>
+            </div>
+            <div *ngFor="let id of persona.vacunas">
+                <div *ngFor="let vacuna of vacunas">
+                    <div *ngIf="vacuna._id===id" class="form-group p-4">
+                        {{vacuna.name}}
+                    </div>
+                </div>        
+            </div>
+            <div class="d-grid gap-2 p-4">
+                <button class="btn btn-primary btn-block" type="submit">
+                    EDIT
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row p-4">
+    <form (submit)="addVacuna(name,descripcion,tecnologia,fecha)" id="form1">
+    <div class="card">
+        <div class="card-header">
+            Nueva vacuna para {{persona.name}}
+        </div>
+        <div class="form-group  p-4">
+            <input type="text" class="form-control" placeholder="Name"  required #name>
+        </div>
+        <div class="form-group  p-4">
+            <input type="text" class="form-control" placeholder="Description"  required #descripcion>
+        </div>
+        <div class="form-group  p-4">
+            <input type="text" class="form-control" placeholder="Tecnologia" required #tecnologia>
+        </div>
+        <div class="form-group p-4">
+            <input type="date" class="form-control" placeholder="Date" required #fecha>
+        </div>
+        <div class="d-grid gap-2 p-4">
+        <button class="btn btn-primary btn-block"type="submit">
+            ADD
+        </button>
+        </div>
+    </div>
+    </form>
+</div>
+</ng-template>
+
+
+

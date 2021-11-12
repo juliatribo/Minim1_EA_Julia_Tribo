@@ -1,32 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SubjectListComponent } from './components/subject-list/subject-list.component';
-import { SubjectPreviewComponent } from './components/subject-preview/subject-preview.component';
-import { StudentPreviewComponent } from './components/student-preview/student-preview.component';
-import { VacunaPreviewComponent } from './components/vacuna-preview/vacuna-preview.component';
-import { VacunaListComponent } from './components/vacuna-list/vacuna-list.component';
+
+
+import { PersonaListComponent } from './components/persona-list/persona-list.component';
+import { PersonaPreviewComponent } from './components/persona-preview/persona-preview.component';
 
 const routes: Routes = [
+
   {
-    path: 'subjects',
-    component: SubjectListComponent
+    path: 'personas',
+    component:PersonaListComponent
   },
   {
-    path: 'subjects/:id',
-    component: SubjectPreviewComponent
-  },
-  {
-    path: 'students/:id',
-    component: StudentPreviewComponent
-  },
-  {
-    path: 'vacunas',
-    component: VacunaListComponent
-  },
-  {
-    path: 'vacunas/:id',
-    component: VacunaPreviewComponent
+    path: 'personas/:id',
+    component:PersonaPreviewComponent
   }
 
 ];

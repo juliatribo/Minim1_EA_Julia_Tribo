@@ -11,7 +11,7 @@ export class VacunaService {
   constructor(private http:HttpClient) { }
 
   createVacuna(vacuna:Vacuna){
-    return this.http.post(this.URI,vacuna)
+    return this.http.post<Vacuna>(this.URI,vacuna)
   }
 
   getVacunas(){

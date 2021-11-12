@@ -5,7 +5,7 @@ const router = Router(); //crea con express un enrutador --> es un objeto para p
 import {createStudent,getStudents,getStudent, deleteStudent, updateStudent} from '../controllers/student.controller'
 import {createSubject,getSubjects,getSubject, deleteSubject, updateSubject} from '../controllers/subject.controller'
 import {createVacuna,getVacunas,getVacuna, deleteVacuna, updateVacuna} from '../controllers/vacuna.controller'
-import {createPersona, getPersonas} from '../controllers/persona.controller'
+import {createPersona, getPersonas, getPersona,updatePersona} from '../controllers/persona.controller'
 
 
 router.route('/students')
@@ -37,5 +37,9 @@ router.route('/vacunas/:id')
 router.route('/personas')
     .post(createPersona)
     .get(getPersonas)
+router.route('/personas/:id')
+    .get(getPersona)
+    .put(updatePersona)
+
 
 export default router;

@@ -18,4 +18,11 @@ export class PersonaService {
     return this.http.get<Persona[]>(this.URI)
   }
 
+  getPersona(id:string){
+    return this.http.get<Persona>(this.URI+'/'+id)
+  }
+  updatePersona(persona:Persona){
+    return this.http.put(this.URI+'/'+persona._id,persona)
+  }
+
 }
